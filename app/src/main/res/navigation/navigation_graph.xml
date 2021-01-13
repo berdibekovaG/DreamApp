@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_audioRecFragment"
             app:destination="@id/audioRecFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_textNoteFragment"
+            app:destination="@id/textNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/audioRecFragment"
@@ -37,4 +40,13 @@
         android:name="kz.kolesateam.dreamapp.VoiceNote.AudioListFragment"
         android:label="fragment_audio_list"
         tools:layout="@layout/fragment_audio_list" />
+    <fragment
+        android:id="@+id/textNoteFragment"
+        android:name="kz.kolesateam.dreamapp.TextNote.TextNoteFragment"
+        android:label="fragment_text_note"
+        tools:layout="@layout/fragment_text_note" >
+        <action
+            android:id="@+id/action_textNoteFragment_to_audioListFragment"
+            app:destination="@id/audioListFragment" />
+    </fragment>
 </navigation>

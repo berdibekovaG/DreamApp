@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TextNote.TextNoteFragment"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/what_dream"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="что тебе снилось?"
+        android:textSize="40dp"
+        android:background="@color/white"
+        android:layout_gravity="center|top"/>
+
+    <EditText
+        android:id="@+id/activity_edittext_write_note"
+        android:hint="Напиши свой сон"
+        android:background="@color/white"
+        android:gravity="left"
+        android:padding="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</FrameLayout>
