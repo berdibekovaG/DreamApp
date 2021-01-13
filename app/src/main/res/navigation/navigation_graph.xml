@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/helloFragment">
+
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="kz.kolesateam.dreamapp.Hello.HelloFragment"
+        android:label="fragment_hello"
+        tools:layout="@layout/fragment_hello" >
+        <action
+            android:id="@+id/action_helloFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="kz.kolesateam.dreamapp.MainMenu.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_audioRecFragment"
+            app:destination="@id/audioRecFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioRecFragment"
+        android:name="kz.kolesateam.dreamapp.VoiceNote.AudioRecFragment"
+        android:label="fragment_audio_rec"
+        tools:layout="@layout/fragment_audio_rec" >
+        <action
+            android:id="@+id/action_audioRecFragment_to_audioListFragment"
+            app:destination="@id/audioListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioListFragment"
+        android:name="kz.kolesateam.dreamapp.VoiceNote.AudioListFragment"
+        android:label="fragment_audio_list"
+        tools:layout="@layout/fragment_audio_list" />
+</navigation>
