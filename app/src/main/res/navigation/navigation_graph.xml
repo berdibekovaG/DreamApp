@@ -33,13 +33,17 @@
         tools:layout="@layout/fragment_audio_rec" >
         <action
             android:id="@+id/action_audioRecFragment_to_audioListFragment"
-            app:destination="@id/audioListFragment" />
+            app:destination="@id/audioListFragment"
+            app:exitAnim="@anim/fade_out"
+            app:enterAnim="@anim/slide_in"/>
     </fragment>
     <fragment
         android:id="@+id/audioListFragment"
         android:name="kz.kolesateam.dreamapp.VoiceNote.AudioListFragment"
         android:label="fragment_audio_list"
-        tools:layout="@layout/fragment_audio_list" />
+        tools:layout="@layout/fragment_audio_list"
+       />
+
     <fragment
         android:id="@+id/textNoteFragment"
         android:name="kz.kolesateam.dreamapp.TextNote.TextNoteFragment"

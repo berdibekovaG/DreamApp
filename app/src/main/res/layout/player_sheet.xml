@@ -18,8 +18,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_media_header"
         android:orientation="horizontal"
+        android:background="@drawable/bg_media_header"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         android:id="@+id/textView_fileName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
         android:text="File Name"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -70,42 +70,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <ImageView
-        android:id="@+id/ic_pause"
-        android:layout_width="59dp"
-        android:layout_height="76dp"
+
+    <ImageButton
+        android:layout_width="47dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:src="@drawable/ic_play"
+        app:layout_constraintTop_toBottomOf="@id/textView_fileName"
+        app:layout_constraintBottom_toTopOf="@id/chronometer"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ic_prev"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_fileName"
         app:srcCompat="@drawable/ic_previous"
-        tools:layout_editor_absoluteX="48dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
-    <ImageView
-        android:id="@+id/ic_play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="32dp"
+    <ImageButton
+        android:id="@+id/ic_next"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/ic_next"
         app:layout_constraintTop_toBottomOf="@+id/textView_fileName"
-        app:srcCompat="@drawable/ic_play"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="161dp" />
-
-    <ImageView
-        android:id="@+id/ic_stop"
-        android:layout_width="55dp"
-        android:layout_height="54dp"
-        app:srcCompat="@drawable/ic_next"
-        tools:layout_editor_absoluteX="294dp"
-        tools:layout_editor_absoluteY="126dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteX="282dp" />
 
     <androidx.appcompat.widget.AppCompatSeekBar
-        android:layout_margin="12dp"
+        android:id="@+id/chronometer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ic_play"
+        android:layout_margin="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_next" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,6 @@
         android:id="@+id/include"
         layout="@layout/player_sheet"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="center" />
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
