@@ -30,7 +30,7 @@ class HelloFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v!!.id){
-            R.id.helloNextButton ->navController!!.navigate(R.id.action_helloFragment_to_mainMenuFragment)
+            R.id.helloNextButton -> navController.navigate(R.id.action_helloFragment_to_mainMenuFragment)
         }
     }
 }
