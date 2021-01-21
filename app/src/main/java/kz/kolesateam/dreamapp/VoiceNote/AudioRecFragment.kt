@@ -140,7 +140,7 @@ class AudioRecFragment : Fragment(), View.OnClickListener {
         with(mediaRecorder) {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
-            setOutputFile(recordPath + "/" + recordFile)
+            setOutputFile("$recordPath / $recordFile")
             setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
 
             try {
