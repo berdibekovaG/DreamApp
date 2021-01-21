@@ -1,6 +1,7 @@
 package kz.kolesateam.dreamapp.VoiceNote
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,21 +14,22 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kz.kolesateam.dreamapp.R
 import java.io.File
 
-
-class AudioListFragment : Fragment() {
+class AudioListFragment : Fragment(), OnItemListClick {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
  //private lateinit var playerSheep: ConstraintLayout
     private lateinit var audioList: RecyclerView
     private lateinit var allFiles: Array<File>
-
-
+     private lateinit var audioListAdapter: AudioListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
 
+    override fun onClickListener(file: File, position: Int) {
+        Log.d("PLAY_LOG", "file playing"+ file.name)
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -50,11 +52,11 @@ class AudioListFragment : Fragment() {
         allFiles = directory.listFiles()
 
 
-         val audioListAdapter = AudioListAdapter(allFiles)
-        audioList.adapter = AudioListAdapter(allFiles)
+        audioListAdapter= AudioListAdapter(allFiles, this)
+        audioList.adapter = audioListAdapter
         audioList.setHasFixedSize(true)
         audioList.layoutManager = LinearLayoutManager(context)
-      //  audioList.adapter = audioListAdapter
+        //audioList.adapter = audioListAdapter
 
         if(playerSheep != null){
         bottomSheetBehavior = BottomSheetBehavior.from(playerSheep)
@@ -83,8 +85,7 @@ class AudioListFragment : Fragment() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
                 //пока ничего не делаем
             }
-
         })
-    }
+        }
     }
 }
