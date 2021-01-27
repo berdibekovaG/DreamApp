@@ -21,6 +21,9 @@ class AudioViewHolder(
 
     override fun onClick(v: View?) {
         itemView.setOnClickListener {
+            list_image.setOnClickListener {
+
+            }
             onItemClickListener.onClickListener(allFiles[adapterPosition], adapterPosition)
         }
 

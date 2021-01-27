@@ -14,9 +14,9 @@
         android:layout_height="46dp"
         app:layout_constraintBottom_toBottomOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_play"
-        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/list_title"

@@ -2,7 +2,9 @@ package kz.kolesateam.dreamapp.VoiceNote
 
 
 import android.Manifest
+import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.content.pm.PackageManager.*
 import android.media.MediaRecorder
@@ -76,7 +78,21 @@ class AudioRecFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         val rec = requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO), PERMISSION_CODE)
         when (v!!.id) {
-            listButton.id -> navController.navigate(R.id.action_audioRecFragment_to_audioListFragment)
+            listButton.id ->if(isRecording) {
+                val alertDialog = AlertDialog.Builder(context)
+                alertDialog.setPositiveButton("Да"){
+                    dialog, which ->
+                    navController.navigate(R.id.action_audioRecFragment_to_audioListFragment)
+                    isRecording = false
+                }
+                alertDialog.setNegativeButton("Нет", null)
+                alertDialog.setTitle("Записывается аудио")
+                alertDialog.setMessage("Вы уверены, что хотите завершить аудио?")
+                alertDialog.create().show()
+            }
+                else{
+                navController.navigate(R.id.action_audioRecFragment_to_audioListFragment)
+                }
             recordButton.id -> onRecClick()
         }
     }
@@ -150,6 +166,12 @@ class AudioRecFragment : Fragment(), View.OnClickListener {
             }
             start()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        if(isRecording)
+        stopRecording()
     }
 }
 
